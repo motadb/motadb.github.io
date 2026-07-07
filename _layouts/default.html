@@ -11,20 +11,27 @@
     <div class="site">
       <aside class="sidebar">
         <div class="sidebar-inner">
+          <div class="avatar">DM</div>
           <h1 class="site-title"><a href="{{ '/' | relative_url }}">David Mota</a></h1>
-          <p class="site-sub"><a href="https://github.com/motadb">View My GitHub Profile</a></p>
-          <nav class="main-nav">
+          <p class="site-sub"><a href="https://github.com/motadb">View my GitHub</a></p>
+          <nav class="main-nav" aria-label="Primary Navigation">
             <a href="{{ '/' | relative_url }}">Home</a>
             <a href="{{ '/about' | relative_url }}">About</a>
             <a href="{{ '/projects' | relative_url }}">Projects</a>
             <a href="{{ '/blog' | relative_url }}">Blog</a>
           </nav>
+          <div class="social">
+            <a href="https://www.linkedin.com/in/motadb">LinkedIn</a>
+            <a href="https://github.com/motadb">GitHub</a>
+          </div>
         </div>
       </aside>
 
       <main class="content">
         <div class="page-wrapper">
-          {{ content }}
+          <article class="card">
+            {{ content }}
+          </article>
         </div>
       </main>
     </div>
