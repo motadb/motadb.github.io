@@ -13,14 +13,15 @@ body{
   margin:0;
 }
 /* layout grid: sidebar + content */
-.site{display:grid;grid-template-columns:var(--sidebar-width) 1fr;min-height:100vh}
-.sidebar{background:transparent;padding:28px 24px;border-right:1px solid rgba(0,0,0,0.04)}
+.site{display:grid;grid-template-columns:var(--sidebar-width) minmax(0,var(--content-width));justify-content:center;min-height:100vh}
+.sidebar{background:transparent;padding:20px 18px;border-right:1px solid rgba(0,0,0,0.04)}
 .sidebar-inner{position:sticky;top:28px}
-.site-title{font-family:Merriweather, Georgia, serif;font-size:1.6rem;margin:0 0 6px;color:var(--accent)}
+.site-title{font-family:Merriweather, Georgia, serif;font-size:1.4rem;margin:0 0 6px;color:var(--accent)}
 .site-title a{color:inherit;text-decoration:none}
-.site-sub{margin:0 0 12px}
+.site-sub{margin:0 0 10px}
 .main-nav a{display:block;color:#0a6fff;margin:6px 0;text-decoration:none}
 .main-nav a:hover{text-decoration:underline}
+h1{font-family:Merriweather, Georgia, serif;font-weight:700;font-size:2.1rem;margin:0 0 0.6rem;color:#111}
 .page-wrapper{max-width:var(--content-width);margin:24px auto;padding:0 20px}
 h1{font-family:Merriweather, Georgia, serif;font-weight:700;font-size:2.1rem;margin:0 0 0.6rem;color:#111}
 p{margin:0 0 1rem}
@@ -29,9 +30,15 @@ ul{margin:0 0 1rem 1.25rem}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 /* responsive: collapse sidebar on small screens */
-@media (max-width:860px){
+@media (max-width:960px){
+  /* collapse to single column on narrower viewports */
   .site{grid-template-columns:1fr}
   .sidebar{display:none}
   .page-wrapper{margin:20px auto;padding:0 16px}
+}
+
+@media (min-width:1400px){
+  /* slightly increase content width on very large screens */
+  :root{--content-width:900px}
 }
 
