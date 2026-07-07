@@ -1,10 +1,7 @@
 ---
+layout: default
 title: Home
 ---
-
-<link rel="stylesheet" href="/assets/style.css">
-
-<div class="page-wrapper">
 
 # Welcome
 
@@ -15,5 +12,3 @@ title: Home
 - This site is built with GitHub Pages and Jekyll.
 
 Feel free to explore the repository for projects and small utilities.
-
-</div>
