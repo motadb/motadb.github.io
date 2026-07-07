@@ -4,19 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap">
     <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
   </head>
   <body>
-    <header>
-      <div class="page-wrapper">
-        <h1 style="margin:0 0 8px;color:var(--accent)">David Mota</h1>
-        <p style="margin:0"><a href="https://github.com/motadb">View My GitHub Profile</a></p>
-      </div>
-    </header>
+    <div class="site">
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+          <h1 class="site-title"><a href="{{ '/' | relative_url }}">David Mota</a></h1>
+          <p class="site-sub"><a href="https://github.com/motadb">View My GitHub Profile</a></p>
+          <nav class="main-nav">
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/about' | relative_url }}">About</a>
+            <a href="{{ '/projects' | relative_url }}">Projects</a>
+            <a href="{{ '/blog' | relative_url }}">Blog</a>
+          </nav>
+        </div>
+      </aside>
 
-    <main class="page-wrapper">
-      {{ content }}
-    </main>
+      <main class="content">
+        <div class="page-wrapper">
+          {{ content }}
+        </div>
+      </main>
+    </div>
 
     <footer class="page-wrapper" style="margin-top:48px;color:#777;font-size:0.95rem">
       <p>Hosted on GitHub Pages</p>
