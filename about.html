@@ -1,0 +1,219 @@
+<title>About — motadb</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --bg: #fafaf8;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e8e8e4;
+    --accent: #1a1a1a;
+    --link: #1a1a1a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111110;
+      --fg: #e8e8e4;
+      --muted: #9a9a94;
+      --border: #2a2a28;
+      --accent: #e8e8e4;
+      --link: #e8e8e4;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111110;
+    --fg: #e8e8e4;
+    --muted: #9a9a94;
+    --border: #2a2a28;
+    --accent: #e8e8e4;
+    --link: #e8e8e4;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0;
+  }
+
+  nav {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  nav .wordmark {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--fg);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  nav a {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  nav a:hover { color: var(--fg); }
+
+  .divider {
+    max-width: 680px;
+    margin: 1.25rem auto 0;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-block: 4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0 0 2.5rem;
+  }
+
+  .body-text {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    max-width: 62ch;
+  }
+
+  .body-text p {
+    margin: 0 0 1.5em;
+  }
+
+  .body-text p:last-child { margin-bottom: 0; }
+
+  .body-text a {
+    color: var(--fg);
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+  .body-text a:hover { border-color: var(--fg); }
+
+  .facts {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .fact {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    padding-right: 1rem;
+  }
+
+  .fact .fact-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .fact .fact-value {
+    font-size: 0.9375rem;
+    color: var(--fg);
+  }
+
+  footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  footer span {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+</style>
+
+<nav>
+  <a href="/" class="wordmark">motadb</a>
+  <a href="index.html">Home</a>
+</nav>
+<hr class="divider">
+
+<main>
+  <p class="eyebrow">About</p>
+  <h1>David Mota</h1>
+
+  <div class="body-text">
+    <p>Academy Manager at <a href="https://devscope.net" target="_blank" rel="noopener">DevScope</a> in Viseu, Portugal, working in the Microsoft ecosystem. He began his career at Microsoft Lisbon and later led development teams at Bizdirect/Sonae IM and DevScope.</p>
+
+    <p>He holds a degree in Computer Engineering from UBI and a master's from IPV Viseu. Currently researching Chain-of-Thought reasoning in large language models.</p>
+
+    <p>At heart a researcher and a curious mind — interested in politics, cognitive science and how the mind works. He maintains a regular meditation and mindfulness practice.</p>
+
+    <p>When not researching or mentoring, David tinkers with home automation, runs local LLMs and connects smart sensors around his house. He also rides cross-country mountain bikes to clear his head.</p>
+
+    <p>Projects include "motaDB" and several automation and backup tools — the code is available on <a href="https://github.com/motadb" target="_blank" rel="noopener">GitHub</a>.</p>
+  </div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="fact-label">Location</div>
+      <div class="fact-value">Viseu, Portugal</div>
+    </div>
+    <div class="fact">
+      <div class="fact-label">Role</div>
+      <div class="fact-value">Academy Manager, DevScope</div>
+    </div>
+    <div class="fact">
+      <div class="fact-label">Research</div>
+      <div class="fact-value">LLMs, Chain-of-Thought</div>
+    </div>
+    <div class="fact">
+      <div class="fact-label">Connect</div>
+      <div class="fact-value"><a href="https://www.linkedin.com/in/motadb" target="_blank" rel="noopener">linkedin.com/in/motadb</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>Viseu, Portugal</span>
+  <span>motadb</span>
+</footer>
