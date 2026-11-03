@@ -1,0 +1,23 @@
+---
+layout: default
+title: Writing
+---
+
+<div class="page-header">
+  <p class="eyebrow">Writing</p>
+  <h1>All posts</h1>
+</div>
+
+<div class="posts-section" style="padding-top: 1rem;">
+  <div class="post-list">
+    {% for post in site.posts %}
+    <a href="{{ post.url }}" class="post-item">
+      <span class="post-title">{{ post.title }}</span>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    </a>
+    {% endfor %}
+    {% if site.posts.size == 0 %}
+    <p style="color: var(--muted); font-size: 0.9375rem; padding: 2rem 0;">Nothing here yet.</p>
+    {% endif %}
+  </div>
+</div>

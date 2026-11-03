@@ -1,43 +1,27 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap">
-    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-  </head>
-  <body>
-    <div class="site">
-      <aside class="sidebar">
-        <div class="sidebar-inner">
-          <div class="avatar">DM</div>
-          <h1 class="site-title"><a href="{{ '/' | relative_url }}">I'm David</a></h1>
-         <!-- <p class="site-sub"><a href="https://github.com/motadb">View my GitHub</a></p> -->
-          <nav class="main-nav" aria-label="Primary Navigation">
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/about' | relative_url }}">About</a>
-           <!-- <a href="{{ '/projects' | relative_url }}">Projects</a> -->
-           <!-- <a href="{{ '/blog' | relative_url }}">Blog</a> -->
-          </nav>
-          <div class="social">
-            <a href="https://www.linkedin.com/in/motadb">LinkedIn</a>
-            <a href="https://github.com/motadb">GitHub</a>
-          </div>
-        </div>
-      </aside>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% if page.title and page.title != "Home" %}{{ page.title }} — motadb{% else %}motadb{% endif %}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="/" class="wordmark">motadb</a>
+      <div class="nav-links">
+        <a href="/posts/">Writing</a>
+        <a href="/about.html">About</a>
+      </div>
+    </nav>
+    <hr class="rule">
 
-      <main class="content">
-        <div class="page-wrapper">
-          <article class="card">
-            {{ content }}
-          </article>
-        </div>
-      </main>
-    </div>
+    {{ content }}
 
-    <footer class="page-wrapper" style="margin-top:48px;color:#777;font-size:0.95rem" position="centered">
-      <p>Hosted on GitHub Pages</p>
+    <footer>
+      <span>motadb</span>
     </footer>
-  </body>
+  </div>
+</body>
 </html>

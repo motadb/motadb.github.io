@@ -1,242 +1,50 @@
-<title>About — motadb</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap">
+---
+layout: default
+title: About
+---
 
-<style>
-  :root {
-    --bg: #f9f8f6;
-    --fg: #181817;
-    --muted: #767672;
-    --subtle: #c8c8c2;
-    --border: #e5e4e0;
-    --surface: #ffffff;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #100f0f;
-      --fg: #e6e4e0;
-      --muted: #878580;
-      --subtle: #403e3c;
-      --border: #282726;
-      --surface: #1c1b1a;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #100f0f;
-    --fg: #e6e4e0;
-    --muted: #878580;
-    --subtle: #403e3c;
-    --border: #282726;
-    --surface: #1c1b1a;
-    color-scheme: dark;
-  }
+<div class="page-header">
+  <p class="eyebrow">About</p>
+  <h1>David Mota</h1>
+  <p class="subtitle">Head of Innovation</p>
+</div>
 
-  *, *::before, *::after { box-sizing: border-box; }
+<div class="bio">
+  <p>Head of Innovation at DevScope, working in the Microsoft ecosystem. He began his career at Microsoft Lisbon and later led development teams at SonaeIM before returning to DevScope.</p>
+  <p>He holds a degree in Computer Engineering from UBI and a master's from IPV Viseu. Currently researching Chain-of-Thought reasoning in large language models.</p>
+  <p>At heart a researcher and a curious mind — interested in politics, cognitive science, and how the mind works. He maintains a regular meditation and mindfulness practice.</p>
+  <p>When not researching or mentoring, David tinkers with home automation, runs local LLMs, and connects smart sensors around his house. He also rides cross-country mountain bikes to clear his head.</p>
+</div>
 
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'Inter', system-ui, sans-serif;
-    margin: 0;
-    padding-left: max(16px, env(safe-area-inset-left, 0px));
-    padding-right: max(16px, env(safe-area-inset-right, 0px));
-    padding-block: 0;
-  }
-
-  .wrap { max-width: 660px; margin: 0 auto; }
-
-  nav {
-    padding: 2.25rem 0 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  nav .wordmark {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--fg);
-    text-decoration: none;
-    letter-spacing: -0.015em;
-  }
-  nav .nav-links { display: flex; gap: 1.75rem; }
-  nav .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  nav .nav-links a:hover { color: var(--fg); }
-
-  .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-  /* Header */
-  .page-header {
-    padding: 4.5rem 0 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .eyebrow {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 1rem;
-  }
-  .page-header h1 {
-    font-family: 'Lora', Georgia, serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    margin: 0 0 1.25rem;
-  }
-  .page-header .subtitle {
-    font-size: 1rem;
-    color: var(--muted);
-    margin: 0;
-    line-height: 1.6;
-  }
-
-  /* Bio */
-  .bio {
-    padding: 3rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .bio p {
-    font-size: 1.0625rem;
-    line-height: 1.85;
-    color: var(--fg);
-    margin: 0 0 1.5em;
-    max-width: 60ch;
-  }
-  .bio p:last-child { margin-bottom: 0; }
-
-  /* Facts grid */
-  .facts {
-    padding: 2.5rem 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-  @media (max-width: 480px) {
-    .facts { grid-template-columns: 1fr; gap: 1.5rem; }
-  }
-  .fact-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.4rem;
-  }
-  .fact-value {
-    font-size: 0.9375rem;
-    color: var(--fg);
-    line-height: 1.5;
-  }
-  .fact-value a {
-    color: var(--fg);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    transition: border-color 0.15s;
-  }
-  .fact-value a:hover { border-color: var(--fg); }
-
-  /* Interests */
-  .interests {
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .interests h2 {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    margin: 0 0 1.5rem;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .tag {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    padding: 0.4rem 0.875rem;
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    color: var(--muted);
-    background: transparent;
-  }
-
-  footer {
-    padding: 2rem 0 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  footer span { font-size: 0.8125rem; color: var(--muted); }
-</style>
-
-<div class="wrap">
-  <nav>
-    <a href="/" class="wordmark">motadb</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-    </div>
-  </nav>
-  <hr class="rule">
-
-  <div class="page-header">
-    <p class="eyebrow">About</p>
-    <h1>David Mota</h1>
-    <p class="subtitle">Head of Innovation</p>
+<div class="facts">
+  <div>
+    <div class="fact-label">Role</div>
+    <div class="fact-value">Head of Innovation, DevScope</div>
   </div>
-
-  <div class="bio">
-    <p>Head of Innovation at DevScope, working in the Microsoft ecosystem. He began his career at Microsoft Lisbon and later led development teams at SonaeIM before returning to DevScope.</p>
-    <p>He holds a degree in Computer Engineering from UBI and a master's from IPV Viseu. Currently researching Chain-of-Thought reasoning in large language models.</p>
-    <p>At heart a researcher and a curious mind — interested in politics, cognitive science, and how the mind works. He maintains a regular meditation and mindfulness practice.</p>
-    <p>When not researching or mentoring, David tinkers with home automation, runs local LLMs, and connects smart sensors around his house. He also rides cross-country mountain bikes to clear his head.</p>
+  <div>
+    <div class="fact-label">Education</div>
+    <div class="fact-value">MSc, IPV Viseu<br>BSc, UBI</div>
   </div>
-
-  <div class="facts">
-    <div>
-      <div class="fact-label">Role</div>
-      <div class="fact-value">Head of Innovation, DevScope</div>
-    </div>
-    <div>
-      <div class="fact-label">Education</div>
-      <div class="fact-value">MSc, IPV Viseu<br>BSc, UBI</div>
-    </div>
-    <div>
-      <div class="fact-label">Connect</div>
-      <div class="fact-value"><a href="https://www.linkedin.com/in/motadb" target="_blank" rel="noopener">linkedin.com/in/motadb</a></div>
-    </div>
+  <div>
+    <div class="fact-label">Research</div>
+    <div class="fact-value">LLMs, Chain-of-Thought</div>
   </div>
-
-  <div class="interests">
-    <h2>Interests</h2>
-    <div class="tags">
-      <span class="tag">Large Language Models</span>
-      <span class="tag">Home Automation</span>
-      <span class="tag">Cognitive Science</span>
-      <span class="tag">Data</span>
-      <span class="tag">Web Technologies</span>
-      <span class="tag">Meditation</span>
-      <span class="tag">Mountain Biking</span>
-      <span class="tag">Politics</span>
-    </div>
+  <div>
+    <div class="fact-label">Connect</div>
+    <div class="fact-value"><a href="https://www.linkedin.com/in/motadb" target="_blank" rel="noopener">linkedin.com/in/motadb</a></div>
   </div>
+</div>
 
-  <footer>
-    <span>motadb</span>
-  </footer>
+<div class="interests">
+  <h2>Interests</h2>
+  <div class="tags">
+    <span class="tag">Large Language Models</span>
+    <span class="tag">Home Automation</span>
+    <span class="tag">Cognitive Science</span>
+    <span class="tag">Data</span>
+    <span class="tag">Web Technologies</span>
+    <span class="tag">Meditation</span>
+    <span class="tag">Mountain Biking</span>
+    <span class="tag">Politics</span>
+  </div>
 </div>

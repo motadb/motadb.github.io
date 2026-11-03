@@ -1,245 +1,53 @@
-<title>motadb</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap">
+---
+layout: default
+title: Home
+---
 
-<style>
-  :root {
-    --bg: #f9f8f6;
-    --fg: #181817;
-    --muted: #767672;
-    --subtle: #c8c8c2;
-    --border: #e5e4e0;
-    --surface: #ffffff;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #100f0f;
-      --fg: #e6e4e0;
-      --muted: #878580;
-      --subtle: #403e3c;
-      --border: #282726;
-      --surface: #1c1b1a;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #100f0f;
-    --fg: #e6e4e0;
-    --muted: #878580;
-    --subtle: #403e3c;
-    --border: #282726;
-    --surface: #1c1b1a;
-    color-scheme: dark;
-  }
+<div class="hero">
+  <h1>Hi, I'm David.</h1>
+  <p>Technology enthusiast interested in data, web technologies, home automation, and practical research with large language models.</p>
+</div>
 
-  *, *::before, *::after { box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'Inter', system-ui, sans-serif;
-    margin: 0;
-    padding-left: max(16px, env(safe-area-inset-left, 0px));
-    padding-right: max(16px, env(safe-area-inset-right, 0px));
-    padding-block: 0;
-  }
-
-  .wrap {
-    max-width: 660px;
-    margin: 0 auto;
-  }
-
-  /* Nav */
-  nav {
-    padding: 2.25rem 0 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  nav .wordmark {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--fg);
-    text-decoration: none;
-    letter-spacing: -0.015em;
-  }
-  nav .nav-links {
-    display: flex;
-    gap: 1.75rem;
-    align-items: center;
-  }
-  nav .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  nav .nav-links a:hover { color: var(--fg); }
-
-  .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-  /* Hero */
-  .hero {
-    padding: 5rem 0 4rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .hero h1 {
-    font-family: 'Lora', Georgia, serif;
-    font-size: clamp(2.25rem, 6vw, 3.25rem);
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    text-wrap: balance;
-    margin: 0 0 1.5rem;
-    max-width: 14ch;
-  }
-  .hero p {
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: var(--muted);
-    margin: 0;
-    max-width: 52ch;
-  }
-
-  /* Cards row */
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  @media (max-width: 480px) {
-    .cards { grid-template-columns: 1fr; }
-  }
-  .card {
-    background: var(--bg);
-    padding: 1.75rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .card-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .card-value {
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    color: var(--fg);
-  }
-
-  /* Connect section */
-  .connect {
-    padding: 3rem 0;
-  }
-  .connect h2 {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.375rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    margin: 0 0 1.75rem;
-  }
-  .connect-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .connect-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0;
-    border-top: 1px solid var(--border);
-    gap: 1rem;
-    text-decoration: none;
-    color: var(--fg);
-    transition: opacity 0.15s;
-  }
-  .connect-link:last-child { border-bottom: 1px solid var(--border); }
-  .connect-link:hover { opacity: 0.6; }
-  .connect-link .cl-name {
-    font-size: 0.9375rem;
-    font-weight: 500;
-  }
-  .connect-link .cl-handle {
-    font-size: 0.875rem;
-    color: var(--muted);
-    font-family: 'Inter', monospace;
-  }
-  .connect-link .cl-arrow {
-    color: var(--subtle);
-    font-size: 0.875rem;
-    flex-shrink: 0;
-    margin-left: auto;
-  }
-
-  footer {
-    padding: 2rem 0 3rem;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  footer span {
-    font-size: 0.8125rem;
-    color: var(--muted);
-  }
-</style>
-
-<div class="wrap">
-  <nav>
-    <a href="/" class="wordmark">motadb</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-    </div>
-  </nav>
-  <hr class="rule">
-
-  <div class="hero">
-    <h1>Hi, I'm David.</h1>
-    <p>Technology enthusiast interested in data, web technologies, home automation, and practical research with large language models.</p>
+<div class="cards">
+  <div class="card">
+    <span class="card-label">Role</span>
+    <span class="card-value">Head of Innovation at DevScope</span>
   </div>
-
-  <div class="cards">
-    <div class="card">
-      <span class="card-label">Role</span>
-      <span class="card-value">Head of Innovation at DevScope</span>
-    </div>
-    <div class="card">
-      <span class="card-label">Location</span>
-      <span class="card-value">Viseu, Portugal</span>
-    </div>
-    <div class="card">
-      <span class="card-label">Research</span>
-      <span class="card-value">Chain-of-Thought reasoning in LLMs</span>
-    </div>
-    <div class="card">
-      <span class="card-label">Background</span>
-      <span class="card-value">Microsoft · SonaeIM · DevScope</span>
-    </div>
+  <div class="card">
+    <span class="card-label">Research</span>
+    <span class="card-value">Chain-of-Thought reasoning in LLMs</span>
   </div>
-
-  <div class="connect">
-    <h2>Connect</h2>
-    <div class="connect-links">
-      <a href="https://www.linkedin.com/in/motadb" target="_blank" rel="noopener" class="connect-link">
-        <span class="cl-name">LinkedIn</span>
-        <span class="cl-handle">linkedin.com/in/motadb</span>
-        <span class="cl-arrow">↗</span>
-      </a>
-    </div>
+  <div class="card">
+    <span class="card-label">Background</span>
+    <span class="card-value">Microsoft · SonaeIM · DevScope</span>
   </div>
+  <div class="card">
+    <span class="card-label">Education</span>
+    <span class="card-value">MSc IPV · BSc UBI</span>
+  </div>
+</div>
 
-  <footer>
-    <span>motadb</span>
-  </footer>
+{% if site.posts.size > 0 %}
+<div class="posts-section">
+  <h2>Writing</h2>
+  <div class="post-list">
+    {% for post in site.posts limit:5 %}
+    <a href="{{ post.url }}" class="post-item">
+      <span class="post-title">{{ post.title }}</span>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="connect">
+  <h2>Connect</h2>
+  <div class="connect-links">
+    <a href="https://www.linkedin.com/in/motadb" target="_blank" rel="noopener" class="connect-link">
+      <span class="cl-name">LinkedIn</span>
+      <span class="cl-handle">linkedin.com/in/motadb</span>
+      <span class="cl-arrow">↗</span>
+    </a>
+  </div>
 </div>
