@@ -13,7 +13,7 @@
       <a href="{% if page.lang == 'pt' %}/pt/{% else %}/{% endif %}" class="wordmark">motadb</a>
       <div class="nav-links">
         <a href="{% if page.lang == 'pt' %}/pt/posts/{% else %}/posts/{% endif %}">{% if page.lang == 'pt' %}Escrita{% else %}Writing{% endif %}</a>
-        <a href="{% if page.lang == 'pt' %}/pt/about.html{% else %}/about.html{% endif %}">About</a>
+        <a href="{% if page.lang == 'pt' %}/pt/about/{% else %}/about/{% endif %}">About</a>
         {% if page.lang == 'pt' %}
           <a href="{{ page.url | remove_first: '/pt' }}" class="lang-switch">EN</a>
         {% else %}
