@@ -1,0 +1,26 @@
+---
+layout: default
+title: Escrita
+lang: pt
+permalink: /pt/posts/
+---
+
+<div class="page-header">
+  <p class="eyebrow">Escrita</p>
+  <h1>Todos os textos</h1>
+</div>
+
+<div class="posts-section" style="padding-top: 1rem;">
+  <div class="post-list">
+    {% assign pt_posts = site.posts | where: "lang", "pt" %}
+    {% for post in pt_posts %}
+    <a href="{{ post.url }}" class="post-item">
+      <span class="post-title">{{ post.title }}</span>
+      <span class="post-date">{{ post.date | date: "%-d %b %Y" }}</span>
+    </a>
+    {% endfor %}
+    {% if pt_posts.size == 0 %}
+    <p style="color: var(--muted); font-size: 0.9375rem; padding: 2rem 0;">Ainda nada por aqui.</p>
+    {% endif %}
+  </div>
+</div>

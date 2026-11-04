@@ -1,0 +1,56 @@
+---
+layout: default
+title: Home
+lang: pt
+permalink: /pt/
+---
+
+<div class="hero">
+  <h1>Olá, sou o David.</h1>
+  <p>Entusiasta de tecnologia com interesse em dados, tecnologias web, automação doméstica e investigação prática com modelos de linguagem.</p>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <span class="card-label">Função</span>
+    <span class="card-value">Head of Innovation na DevScope</span>
+  </div>
+  <div class="card">
+    <span class="card-label">Investigação</span>
+    <span class="card-value">Raciocínio Chain-of-Thought em LLMs</span>
+  </div>
+  <div class="card">
+    <span class="card-label">Percurso</span>
+    <span class="card-value">Microsoft · SonaeIM · DevScope</span>
+  </div>
+  <div class="card">
+    <span class="card-label">Formação</span>
+    <span class="card-value">MSc IPV · Lic. UBI</span>
+  </div>
+</div>
+
+{% assign pt_posts = site.posts | where: "lang", "pt" %}
+{% if pt_posts.size > 0 %}
+<div class="posts-section">
+  <h2>Escrita</h2>
+  <div class="post-list">
+    {% for post in pt_posts limit:5 %}
+    <a href="{{ post.url }}" class="post-item">
+      <span class="post-title">{{ post.title }}</span>
+      <span class="post-date">{{ post.date | date: "%-d %b %Y" }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="connect">
+  <h2>Contacto</h2>
+  <div class="connect-links">
+    <a href="https://www.linkedin.com/in/motadb" target="_blank" rel="noopener" class="connect-link">
+      <span class="cl-name">LinkedIn</span>
+      <span class="cl-handle">linkedin.com/in/motadb</span>
+      <span class="cl-arrow">↗</span>
+    </a>
+  </div>
+</div>

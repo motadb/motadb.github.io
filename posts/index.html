@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Writing
+lang: en
 ---
 
 <div class="page-header">
@@ -10,13 +11,14 @@ title: Writing
 
 <div class="posts-section" style="padding-top: 1rem;">
   <div class="post-list">
-    {% for post in site.posts %}
+    {% assign en_posts = site.posts | where: "lang", "en" %}
+    {% for post in en_posts %}
     <a href="{{ post.url }}" class="post-item">
       <span class="post-title">{{ post.title }}</span>
       <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
     </a>
     {% endfor %}
-    {% if site.posts.size == 0 %}
+    {% if en_posts.size == 0 %}
     <p style="color: var(--muted); font-size: 0.9375rem; padding: 2rem 0;">Nothing here yet.</p>
     {% endif %}
   </div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -9,10 +9,15 @@
 <body>
   <div class="wrap">
     <nav>
-      <a href="/" class="wordmark">motadb</a>
+      <a href="{% if page.lang == 'pt' %}/pt/{% else %}/{% endif %}" class="wordmark">motadb</a>
       <div class="nav-links">
-        <a href="/posts/">Writing</a>
-        <a href="/about.html">About</a>
+        <a href="{% if page.lang == 'pt' %}/pt/posts/{% else %}/posts/{% endif %}">{% if page.lang == 'pt' %}Escrita{% else %}Writing{% endif %}</a>
+        <a href="{% if page.lang == 'pt' %}/pt/about.html{% else %}/about.html{% endif %}">About</a>
+        {% if page.lang == 'pt' %}
+          <a href="{{ page.url | remove_first: '/pt' }}" class="lang-switch">EN</a>
+        {% else %}
+          <a href="/pt{{ page.url }}" class="lang-switch">PT</a>
+        {% endif %}
       </div>
     </nav>
     <hr class="rule">

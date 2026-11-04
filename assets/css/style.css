@@ -76,6 +76,17 @@ nav .nav-links a {
   transition: color 0.15s;
 }
 nav .nav-links a:hover { color: var(--fg); }
+nav .lang-switch {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  color: var(--muted) !important;
+  transition: border-color 0.15s, color 0.15s !important;
+}
+nav .lang-switch:hover { border-color: var(--fg); color: var(--fg) !important; }
 
 .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "What I've learned about Chain-of-Thought reasoning"
+lang: en
 ---
 
 Chain-of-Thought prompting is one of those ideas that sounds obvious in retrospect: if you ask a model to think step by step, it performs better on complex tasks. But the more time I spend with it, the more nuanced it becomes.
