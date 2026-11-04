@@ -87,6 +87,18 @@ nav .lang-switch {
   transition: border-color 0.15s, color 0.15s !important;
 }
 nav .lang-switch:hover { border-color: var(--fg); color: var(--fg) !important; }
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: border-color 0.15s, color 0.15s;
+}
+.theme-toggle:hover { border-color: var(--fg); color: var(--fg); }
 
 .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
 

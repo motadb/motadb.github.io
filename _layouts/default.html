@@ -18,6 +18,9 @@
         {% else %}
           <a href="/pt{{ page.url }}" class="lang-switch">PT</a>
         {% endif %}
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon"></span>
+        </button>
       </div>
     </nav>
     <hr class="rule">
@@ -28,5 +31,33 @@
       <span>motadb</span>
     </footer>
   </div>
+<script>
+  (function() {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch(e) {}
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    function getTheme() {
+      return document.documentElement.getAttribute('data-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+
+    function updateIcon() {
+      var icon = document.querySelector('.theme-icon');
+      if (!icon) return;
+      icon.textContent = getTheme() === 'dark' ? '☀' : '☾';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      updateIcon();
+      document.getElementById('themeToggle').addEventListener('click', function() {
+        var next = getTheme() === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch(e) {}
+        updateIcon();
+      });
+    });
+  })();
+</script>
 </body>
 </html>
